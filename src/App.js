@@ -1,16 +1,18 @@
-import Sidebar from "./components/Sidebar/Sidebar";
 import Card from "./components/Card/Card";
-import { useEffect } from "react";
+import React, { useState } from "react";
 import { useThemes } from "./context/themes-context";
+import Sidebar from "./components/Sidebar/Sidebar";
 
 function App() {
   const { themes } = useThemes();
-  console.log("themes", themes);
-  useEffect(() => {}, []);
+  const [categoryId, setCategoryId] = useState("");
 
   return (
     <div className="container main-block">
-      <Sidebar />
+      <Sidebar
+        categoryId={categoryId}
+        onClickCategory={(i) => setCategoryId(i)}
+      />
       <Card />
     </div>
   );

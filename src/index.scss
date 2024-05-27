@@ -19,7 +19,10 @@
   padding: 12px;
   width: 100%;
   max-width: 264px;
-  &-item{
+  &-btn{
+    display: block;
+    border: none;
+    background: transparent;
     font-weight: 800;
     font-size: 18px;
     line-height: 100%;
@@ -27,6 +30,15 @@
     color: #39414b;
     padding: 12px;
     //background: #5fbf77;
+    cursor: pointer;
+  }
+  .active{
+    background-color: #5fbf77;
+    border-radius: 12px;
+    padding: 12px;
+    color: #fff;
+    width: 100%;
+    text-align: left;
   }
 }
 

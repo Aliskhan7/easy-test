@@ -30,7 +30,6 @@ export const ThemesContextProvider: React.FC<PropsWithChildren<{}>> = ({
     async function preload() {
       setLoading(true);
       const result = await themeFetch();
-      console.log(result);
       setThemes(result);
       setLoading(false);
     }

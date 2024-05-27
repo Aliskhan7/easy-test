@@ -1,13 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 
-const Sidebar = () => {
+const Sidebar = ({ categoryId, onClickCategory }) => {
+  console.log(categoryId);
+
+  const menuThemes = [
+    "Все темы",
+    "Логика и мышление",
+    "Загадки",
+    "Головоломки",
+    "Путешествия",
+  ];
   return (
     <div className="filter">
-      <div className="filter-item">Все темы</div>
-      <div className="filter-item">Логика и мышление</div>
-      <div className="filter-item">Загадки</div>
-      <div className="filter-item">Головоломки</div>
-      <div className="filter-item">Путешествия</div>
+      {menuThemes.map((item, i) => {
+        return (
+          <button
+            onClick={() => onClickCategory(i)}
+            className={`filter-btn ${categoryId === i ? "active" : ""}`}
+          >
+            {item}
+          </button>
+        );
+      })}
     </div>
   );
 };
