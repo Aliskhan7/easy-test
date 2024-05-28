@@ -2,8 +2,7 @@ import React from "react";
 import { useThemes } from "../../context/themes-context";
 import Skeleton from "../Skeleton/Skeleton";
 
-const Card = () => {
-  const { themes, loading } = useThemes();
+const Card = ({ themes, loading }) => {
   return (
     <div>
       {loading ? (

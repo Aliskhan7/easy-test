@@ -13,7 +13,7 @@ function App() {
         categoryId={categoryId}
         onClickCategory={(i) => setCategoryId(i)}
       />
-      <Card />
+      <Card themes={themes} />
     </div>
   );
 }
