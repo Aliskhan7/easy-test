@@ -1,10 +1,10 @@
 import React from "react";
-import { useThemes } from "../../context/themes-context";
 import Skeleton from "../Skeleton/Skeleton";
+import { CourseListProps } from "../../types.ts";
 
-const Card = ({ themes, loading }) => {
+const Card: React.FC<CourseListProps> = ({ themes, loading }) => {
   return (
-    <div>
+    <>
       {loading ? (
         <Skeleton />
       ) : (
@@ -12,17 +12,27 @@ const Card = ({ themes, loading }) => {
           {themes?.map((theme) => {
             return (
               <div
+                key={theme.id}
                 className="cards-item"
                 style={{ background: `${theme.bgColor}` }}
               >
-                <img src={theme.image} alt="img" />
+                {loading ? (
+                  <div className="loader-block">
+                    <div className="loader"></div>
+                  </div>
+                ) : (
+                  <div className="cards-item__img">
+                    <img src={theme.image} alt="img" />
+                  </div>
+                )}
+
                 <p className="cards-item_text">{theme.name}</p>
               </div>
             );
           })}
         </div>
       )}
-    </div>
+    </>
   );
 };
 

@@ -5,13 +5,8 @@ import React, {
   useEffect,
   useState,
 } from "react";
-import { ITheme } from "../types";
+import { ITheme, IThemeContext } from "../types";
 import { themeFetch } from "../api";
-
-interface IThemeContext {
-  themes: ITheme[];
-  loading: boolean;
-}
 
 const defaultContext: IThemeContext = {
   themes: [],
