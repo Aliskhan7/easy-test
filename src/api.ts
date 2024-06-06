@@ -11,6 +11,9 @@ export async function themeFetch() {
       options,
     );
     const data = await response.json();
+    if (!response.ok) {
+      throw new Error("Something went wrong");
+    }
     return data;
   } catch (err) {
     console.error(err);
